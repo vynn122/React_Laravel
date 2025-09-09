@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RoleController;
 use App\Models\Category;
 use Illuminate\Http\Request;
@@ -29,6 +30,7 @@ Route::middleware(['auth:api'])->group(function () {
     Route::apiResource('role', RoleController::class);
     Route::apiResource('brand', BrandController::class)->withoutMiddleware(['auth:api']);
     Route::apiResource('category', CategoryController::class)->withoutMiddleware(['auth:api']);
+    Route::apiResource('product', ProductController::class)->withoutMiddleware(['auth:api']);
     // Route::delete('role/{id}', [RoleController::class, 'destroy']);
     //->withoutMiddleware(['auth:api'])
 });
